@@ -1,5 +1,5 @@
 # SpringBootTraining
-use below command to run this demo:
+use this command to run the demo:
     java -jar demo-0.0.1-SNAPSHOT.jar
     
 
