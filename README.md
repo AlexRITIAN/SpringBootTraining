@@ -1,4 +1,5 @@
 # SpringBootTraining
+this demo requered CMD windows must be miximize.
 use this command to run the demo:
     java -jar demo-0.0.1-SNAPSHOT.jar
     
