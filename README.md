@@ -1,5 +1,5 @@
 # SpringBootTraining
-this demo requered CMD windows must be miximize.
+this demo requered CMD windows must be maximize.
 use this command to run the demo:
     java -jar demo-0.0.1-SNAPSHOT.jar
     
