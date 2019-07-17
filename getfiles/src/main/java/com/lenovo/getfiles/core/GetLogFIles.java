@@ -30,7 +30,7 @@ public class GetLogFIles {
         // 遍历目录下的文件和子目录
         for (int i = 0; i < fileArray.length; i++) {
             if (fileArray[i].isFile()) {
-                System.out.println(fileArray[i].getPath());
+                // System.out.println(fileArray[i].getPath());
                 copyFile(fileArray[i]);
             } else {
                 getFiles(fileArray[i].getPath());
@@ -52,19 +52,23 @@ public class GetLogFIles {
            endDateL = format.parse(endDate).getTime(); 
            if(socurFile.lastModified() >= startDateL && socurFile.lastModified() <= endDateL ){
                Files.copy(socurFile.toPath(), targetFile.toPath());
+               System.out.println(socurFile.toPath());
            }
         }else if(startDate == null && endDate != null && "".equals(startDate) && !"".equals(endDate)){
             endDateL = format.parse(endDate).getTime();
             if(socurFile.lastModified() <= endDateL ){
                 Files.copy(socurFile.toPath(), targetFile.toPath());
+                System.out.println(socurFile.toPath());
             } 
         }else if(startDate != null && endDate == null && !"".equals(startDate) && "".equals(endDate)){
             startDateL = format.parse(startDate).getTime();
             if(socurFile.lastModified() >= startDateL ){
                 Files.copy(socurFile.toPath(), targetFile.toPath());
+                System.out.println(socurFile.toPath());
             } 
         }else{
             Files.copy(socurFile.toPath(), targetFile.toPath());
+            System.out.println(socurFile.toPath());
         }
     }
 
