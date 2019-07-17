@@ -28,12 +28,14 @@ public class GetLogFIles {
         File file = new File(path);
         File[] fileArray = file.listFiles();
         // 遍历目录下的文件和子目录
-        for (int i = 0; i < fileArray.length; i++) {
-            if (fileArray[i].isFile()) {
-                // System.out.println(fileArray[i].getPath());
-                copyFile(fileArray[i]);
-            } else {
-                getFiles(fileArray[i].getPath());
+        if(fileArray != null){
+            for (int i = 0; i < fileArray.length; i++) {
+                if (fileArray[i].isFile()) {
+                    // System.out.println(fileArray[i].getPath());
+                    copyFile(fileArray[i]);
+                } else {
+                    getFiles(fileArray[i].getPath());
+                }
             }
         }
     }
