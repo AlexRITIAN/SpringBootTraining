@@ -7,10 +7,15 @@ import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * GetLogFIles
  */
 public class GetLogFIles {
+
+    private Logger logger = LoggerFactory.getLogger(GetLogFIles.class);
 
     private String activeLogPath;
     private String startDate;
@@ -49,6 +54,10 @@ public class GetLogFIles {
         if(!targetFile.getParentFile().exists()){
             targetFile.getParentFile().mkdirs();
         }
+        logger.debug("文件路径 : " + socurFile.getPath());
+        logger.debug("文件名称 : " + socurFile.getName());
+        logger.debug("文件修改时间 : " + socurFile.lastModified());
+        logger.debug("开始时间 : " + format.parse(startDate).getTime());
         if(startDate != null && endDate != null && !"".equals(startDate) && !"".equals(endDate)){
            startDateL = format.parse(startDate).getTime();
            endDateL = format.parse(endDate).getTime(); 
